@@ -1,0 +1,183 @@
+﻿@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>>EYÜP ÇAKMAKER</title>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="keywords" content="Photo Bum Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
+	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script type="application/x-javascript">
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+  
+    <link href="~/Tema/web/css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="~/Tema/web/css/fontawesome-all.css" rel="stylesheet">
+
+    <link href="~/Tema/web/css/style.css" rel="stylesheet" type="text/css" media="all" />
+    
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i&amp;subset=cyrillic,cyrillic-ext,greek,greek-ext,latin-ext,vietnamese" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=PT+Sans+Caption:400,700&amp;subset=cyrillic,cyrillic-ext,latin-ext" rel="stylesheet">
+
+
+
+</head>
+<body>
+
+  
+    <div id="home" class="w3ls-banner">
+   
+        <header>
+            <nav class="navbar navbar-expand-lg navbar-light bg-gradient-secondary">
+
+                <h1>
+                    <a class="navbar-brand text-white" href="index.html"><i class="fab mr-2 fa-tripadvisor"></i>EYÜP ÇAKMAKER </a>
+                </h1>
+                <button class="navbar-toggler ml-md-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-lg-auto text-center">
+                        <li class="nav-item active mr-1">
+                            <a class="nav-link" href="/Home/Index">
+                                Anasayfa
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item  mr-1">
+                            <a class="nav-link" href="#hakkimda">Hakkında</a>
+                        </li>
+                        <li class="nav-item  mr-3">
+                            <a class="nav-link" href="#galeri">Galeri</a>
+                        </li> 
+                                            
+                        <li >
+                            <a href="/Admin/GirisYap" class="w3ls-btn"> Admin </a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+        </header>
+     
+
+    </div>
+   
+    @RenderBody()
+   
+    <script type="text/javascript" src="~/Tema/web/js/jquery-2.2.3.min.js"></script>
+       <script src="~/Tema/web/js/responsiveslides.min.js"></script>
+    <script>
+
+        $(function () {
+       
+            $("#slider4").responsiveSlides({
+                auto: true,
+                pager: true,
+                nav: false,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+
+        });
+    </script>
+    <script>       
+        $(function () {
+             $("#slider3").responsiveSlides({
+                auto: true,
+                pager: false,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+                before: function () {
+                    $('.events').append("<li>before event fired.</li>");
+                },
+                after: function () {
+                    $('.events').append("<li>after event fired.</li>");
+                }
+            });
+
+        });
+    </script>
+    <!-- Responsive slides js -->
+    <!-- middle slider -->
+    <script>
+        $(window).load(function () {
+            $("#flexiselDemo1").flexisel({
+                visibleItems: 5,
+                animationSpeed: 1000,
+                autoPlay: true,
+                autoPlaySpeed: 3000,
+                pauseOnHover: true,
+                enableResponsiveBreakpoints: true,
+                responsiveBreakpoints: {
+                    portrait: {
+                        changePoint: 414,
+                        visibleItems: 1
+                    },
+                    landscape: {
+                        changePoint: 640,
+                        visibleItems: 2
+                    },
+                    tablet: {
+                        changePoint: 768,
+                        visibleItems: 3
+                    },
+                    others: {
+                        changePoint: 1080,
+                        visibleItems: 4
+                    }
+                }
+            });
+
+        });
+    </script>
+    <script src="~/Tema/web/js/jquery.flexisel.js"></script>
+      <script src="~/Tema/web/js/jquery.waypoints.min.js"></script>
+    <script src="~/Tema/web/js/jquery.countup.js"></script>
+    <script>
+        $('.counter').countUp();
+    </script>
+       <script src="~/Tema/web/js/SmoothScroll.min.js"></script>
+      <script type="text/javascript">
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1000);
+            });
+        });
+    </script>
+       <script type="text/javascript">
+        $(document).ready(function () {
+           
+
+            $().UItoTop({ easingType: 'easeOutQuart' });
+
+        });
+    </script>   
+    <script type="text/javascript" src="~/Tema/web/js/move-top.js"></script>
+    <script type="text/javascript" src="~/Tema/web/js/easing.js"></script>
+    <script type="text/javascript" src="~/Tema/web/js/bootstrap.js"></script><!-- bootstrap js file -->
+
+</body>
+</html>

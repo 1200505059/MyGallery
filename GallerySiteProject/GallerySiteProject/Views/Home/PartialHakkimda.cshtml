@@ -1,0 +1,36 @@
+﻿<style>
+    .img-fixed {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .image-container {
+        width: 300px; /* Sabit genişlik */
+        height: 300px; /* Sabit yükseklik */
+        border: 3px solid yellow;
+        border-radius: 5%;
+        overflow: hidden;
+        margin: auto; /* Ortalamak için */
+    }
+</style>
+
+<section class="about py-5" id="hakkimda">
+    <div class="container py-3">
+        @foreach (var item in (List<GallerySiteProject.Models.TblHakkimda>)ViewBag.TBLHAKKIMDA)
+        {
+            <div class="row bottom-grids">
+                <div class="col-lg-8 bottom-grid1">
+                    <h3 class="mb-2">@item.HakkimdaBaslik</h3>
+                    <h3>@item.HakkimdaGiris</h3>
+                    <p>@item.HakkimdaText</p>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 mt-lg-0 mt-5 text-center image-container">
+                    <img src="~/Tema/web/images/@item.HakkimdaImageURL" alt="" class="img-fluid img-fixed" />
+                </div>
+            </div>
+            <br />
+            <br />
+        }
+    </div>
+</section>

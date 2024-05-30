@@ -1,0 +1,31 @@
+﻿
+<div class="slider" style="background-image:url('~/Tema/web/images/Ben.jpg')">
+    <div class="callbacks_container">
+        <ul class="rslides callbacks callbacks1" id="slider4">
+            <li>
+                <div class="w3layouts-banner-top">
+                    <div class="banner-dott">
+                        <div class="container">
+                            @foreach (var item in (List<GallerySiteProject.Models.TblGiris>)ViewBag.TBLGİRİS)
+                            {
+                                <div class="padding">
+                                    <div class="agileits-banner-info">
+                                        <p>@item.GirisAdSoyad</p>
+                                        <h2 class="second">@item.GirisAciklama</h2>
+                                    </div>
+                                    <ul class="social text-center mt-sm-5 mt-3">
+                                        <li><a href="@item.GirisFacebookURL"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                                        <li><a href="@item.GirisLinkedinURL"><i class="fab fa-linkedin-in"></i></a></li>
+                                        <li><a href="@item.GirisMailURL"><i class="fab fa-google-plus"></i></a></li>
+                                        <li><a href="@item.GirisInstagramURL"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+</div>

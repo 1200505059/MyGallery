@@ -1,0 +1,52 @@
+﻿<style>
+    .social-icons {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .social-icons li {
+            margin: 0 10px;
+        }
+
+        .social-icons a {
+            font-size: 2rem; /* Icon boyutunu büyütmek için */
+            color: #000; /* İkon rengi, isteğe bağlı */
+            text-decoration: none;
+            display: flex; /* Flexbox kullanarak simgeleri ortala */
+            justify-content: center; /* Simgeleri yatayda ortala */
+            align-items: center; /* Simgeleri dikeyde ortala */
+        }
+
+            .social-icons a:hover {
+                color: #007bff; /* Hover efekti, isteğe bağlı */
+            }
+
+    .footer-grid-left {
+        display: flex;
+        justify-content: center;
+    }
+</style>
+
+@foreach (var item in (List<GallerySiteProject.Models.TblGiris>)ViewBag.TBLGİRİS)
+{
+    <footer class="py-5">
+        <div class="container py-md-3">
+            <div class="row footer-grids justify-content-center">
+                <div class="col-lg-4 footer-grid-left mb-lg-0 mb-4">
+                    <div class="social mb-4">
+                        <ul class="social-icons">
+                            <li><a href="@item.GirisFacebookURL"><i class="fab fa-facebook-f" aria-hidden="true"></i></a></li>
+                            <li><a href="@item.GirisLinkedinURL"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="@item.GirisMailURL"><i class="fab fa-google-plus"></i></a></li>
+                            <li><a href="@item.GirisInstagramURL"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+}

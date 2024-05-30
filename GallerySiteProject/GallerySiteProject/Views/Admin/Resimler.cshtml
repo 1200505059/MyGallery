@@ -1,0 +1,59 @@
+﻿@model List<GallerySiteProject.Models.TblResimler>
+@{
+    ViewData["Title"] = "Resimler";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+    th {
+        font-weight: bold;
+    }
+
+        th i {
+            margin-right: 5px;
+        }
+
+    .table-container {
+        max-height: 500px; /* Adjust this height as needed */
+        overflow-y: auto;
+    }
+
+   
+</style>
+
+<div class="table-container">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>RESİM</th>               
+                <th><i class="fas fa-trash-alt"></i></th>
+               
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                  
+                    <td>
+                        <img src="~/Tema/web/images/@item.ResimURL" alt="" class="profile-image" style="width:70px;height:70px; border:1px dashed black;border-radius:50%;"/>
+                    </td>
+                    <td><a href="/Admin/ResimSil/@item.ResimID" class="btn btn-outline-danger">SİL</a></td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<td><a href="/Admin/ResimEkle" class="btn btn-outline-info">Yeni Resim</a></td>

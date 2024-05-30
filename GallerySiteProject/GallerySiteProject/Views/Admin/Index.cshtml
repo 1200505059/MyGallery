@@ -1,0 +1,67 @@
+﻿@model List<GallerySiteProject.Models.TblGiris>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: center;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            font-weight: bold;
+        }
+
+            th i {
+                margin-right: 5px;
+            }
+    </style>
+
+    
+    <table class="table table-bordered">
+        <thead>
+            <tr>               
+                <th>AD SOYAD</th>
+                <th>AÇIKLAMA</th>
+                <th><i class="fab fa-facebook-f icon"></i></th>
+                <th><i class="fab fa-linkedin-in icon"></i></th>
+                <th><i class="far fa-envelope icon"></i></th>
+                <th><i class="fab fa-instagram icon"></i></th>
+            <th><i class="fas fa-trash-alt"></i></th>
+            <th><i class="fas fa-pencil-alt"></i></th> 
+            
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach(var item in Model)
+            {
+                <tr>                   
+                    <td>@item.GirisAdSoyad.Substring(0, Math.Min(10, @item.GirisAdSoyad.Length))</td>
+                    <td>@item.GirisAciklama.Substring(0, Math.Min(10, @item.GirisAciklama.Length))</td>
+                    <td>@item.GirisFacebookURL.Substring(0, Math.Min(10, @item.GirisFacebookURL.Length))</td>
+                    <td>@item.GirisLinkedinURL.Substring(0, Math.Min(10, @item.GirisLinkedinURL.Length))</td>
+                    <td>@item.GirisMailURL.Substring(0, Math.Min(10, @item.GirisMailURL.Length))</td>
+                    <td>@item.GirisInstagramURL.Substring(0, Math.Min(10, @item.GirisInstagramURL.Length))</td>
+                    <td><a href="/Admin/girisSil/@item.GirisID" class="btn btn-outline-danger">SİL</a></td>
+                <td><a href="/Admin/GirisGuncelle/@item.GirisID" class="btn btn-outline-success">GÜNCELLE</a></td>
+                    
+
+                </tr>
+            }
+           
+        </tbody>
+       
+    </table>
+<td><a href="/Admin/GirisEkle" class="btn btn-outline-info">Yeni Giriş</a></td>
+
+
+

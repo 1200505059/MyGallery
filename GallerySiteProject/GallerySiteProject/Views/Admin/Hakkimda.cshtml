@@ -1,0 +1,69 @@
+﻿@model List<GallerySiteProject.Models.TblHakkimda>
+@{
+    ViewData["Title"] = "Hakkimda";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th, td {
+        padding: 8px;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+    }
+
+   
+
+    th {
+        font-weight: bold;
+    }
+
+        th i {
+            margin-right: 5px;
+        }
+</style>
+
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>BAŞLIK</th>
+            <th>ALT BAŞLIK</th>
+            <th>AÇIKLAMA</th>
+            <th>IMAGE</th>
+            
+            <th><i class="fas fa-trash-alt"></i></th>
+            <th><i class="fas fa-pencil-alt"></i></th>
+
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.HakkimdaBaslik</td>
+                <td>@item.HakkimdaGiris</td>
+                <td>@item.HakkimdaText.Substring(0, Math.Min(10, @item.HakkimdaText.Length))</td>
+                <td>
+                    <img src="~/Tema/web/images/@item.HakkimdaImageURL" alt="" style="border:5px solid white;border-radius:100%;width:70px;height:70px;" class="profile-image" />
+                </td>
+
+                <td><a href="/Admin/HakkimdaSil/@item.HakkimdaID" class="btn btn-outline-danger">SİL</a></td>
+                <td><a href="/Admin/HakkimdaGuncelle/@item.HakkimdaID" class="btn btn-outline-success">GÜNCELLE</a></td>
+
+
+            </tr>
+        }
+
+    </tbody>
+
+</table>
+<td><a href="/Admin/HakkimdaEkle" class="btn btn-outline-info">Yeni Hakkımda</a></td>
+
+
+

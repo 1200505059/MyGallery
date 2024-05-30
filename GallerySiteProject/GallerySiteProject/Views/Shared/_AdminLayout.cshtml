@@ -1,0 +1,181 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- JS (jQuery gereklidir) -->
+   
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+
+        .admin-panel {
+            display: flex;
+            height: 100vh;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar-menu {
+            list-style: none;
+        }
+
+            .sidebar-menu li {
+                margin: 20px 0;
+            }
+                .sidebar-menu li a {
+                    color: #fff;
+                    text-decoration: none;
+                    font-size: 18px;
+                    display: flex;
+                    align-items: center;
+                }
+
+                    .sidebar-menu li a i {
+                        margin-right: 10px;
+                    }
+
+                    .sidebar-menu li a:hover {
+                        color:blue;
+                    }
+
+        .main-content {
+            flex-grow: 1;
+            background-color: #fff;
+            padding: 20px;
+        }
+
+        .header {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-content h1 {
+            font-size: 24px;
+        }
+
+        .user-info {
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+        }
+
+            .user-info i {
+                margin-right: 10px;
+            }
+
+        .content {
+            padding: 20px;
+        }
+
+        .card {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+            .card h3 {
+                margin-bottom: 10px;
+                font-size: 22px;
+            }
+
+    
+
+        .show {
+            display: block;
+        }
+
+        /* Tema Rengi Ayarı */
+        :root {
+            --theme-color: #3498db; /* Varsayılan tema rengi */
+        }
+
+        body {
+            background-color: var(--theme-color);
+        }
+
+        .header {
+            background-color: #fff;
+            color: var(--theme-color); /* Başlık metni rengi */
+        }
+
+        .sidebar {
+            background-color: #333;
+        }
+
+        .sidebar-menu li a:hover {
+            color: var(--theme-color); /* Sidebar linklerinin hover rengi */
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-panel">
+        <aside class="sidebar">
+            
+            <div class="sidebar-header" >
+              <br />
+                <img src="~/Tema/web/images/ben2.jpg" alt="" style="border:5px solid white;border-radius:100%;width:200px;height:200px;" />
+                <br />
+            </div>
+            <ul class="sidebar-menu">
+                <li><a href="/Admin/Index/"><i class="fas fa-sign-in-alt"></i> Giriş İşlemleri</a></li>
+                <li><a href="/Admin/Hakkimda/"><i class="fas fa-user"></i> Hakkımda İşlemleri</a></li>
+                <li><a href="/Admin/Resimler"><i class="fas fa-images"></i> Galeri İşlemleri</a></li>
+                <li><a href="/Admin/Admin"><i class="fas fa-user-cog"></i> Admin İşlemleri</a></li>              
+                <li><a href="/Home/Index"><i class="fas fa-sign-out-alt"></i> Çıkış</a></li>
+            </ul>
+          
+
+        </aside>
+        <main class="main-content">
+            <header class="header" style="background-color: #333;color:white;">
+                <div class="header-content">
+                    <h1>~ADMİN PANELİNE HOŞGELDİNİZ</h1>
+                    
+                </div>
+            </header><br />
+            <section class="content">
+                <!-- Content goes here -->
+                 @RenderBody()
+            </section>
+        </main>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
+
